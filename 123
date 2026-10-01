@@ -1,0 +1,34 @@
+۲۳_تابع ( )ComputeTriangle که مساحت a و محیط p از یک مثلث با اضلاع به طول a و b و c را محاسبه مینماید نوشته و آزمایش کنید:
+void ComputeTriangle(float& a, float& p, float a, float b, float c);
+
+پاسخ:
+#include<iostream.h>
+#include<math.h>
+
+void ComputeTriangle(float& area, float& p, float a, float b, float c);
+
+int main()
+{
+    float a, b, c;
+    float area, p;
+
+    cout << "Enter three sides: ";
+    cin >> a >> b >> c;
+
+    ComputeTriangle(area, p, a, b, c);
+
+    cout << "Area = " << area << endl;
+    cout << "Perimeter = " << p << endl;
+
+    return 0;
+}
+
+void ComputeTriangle(float& area, float& p, float a, float b, float c)
+{
+    float s;
+
+    p = a + b + c;
+    s = p / 2;
+
+    area = sqrt(s * (s - a) * (s - b) * (s - c));
+}
